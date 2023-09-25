@@ -7,7 +7,7 @@ let package = Package(
     name: "MGOAuth1",
     platforms: [
         .iOS(.v15),
-        .macOS(.v10_10)
+        .macOS(.v10_15)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
