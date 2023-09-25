@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "mgkeychain",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gannonmg/MGKeychain",
+      "state" : {
+        "revision" : "e6da67212c393156372b218ffd7396c20317f829",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
