@@ -59,7 +59,7 @@ public struct WKView: UIViewRepresentable {
 }
 
 public extension View {
-    func oauthSheet(oAuthObservable: OAuthObservable) -> some View {
+    func oAuthSheet(oAuthObservable: OAuthObservable) -> some View {
         self.modifier(OAuthSheetModifier(oAuthObservable: oAuthObservable))
     }
 }
