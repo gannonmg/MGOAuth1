@@ -59,14 +59,18 @@ public struct WKView: UIViewRepresentable {
 }
 
 public extension View {
-    func oauthSheet(
-//        isPresented: Binding<Bool>,
-        authorizationUrl: Binding<URL?>,
-        oAuthObservable: OAuthObservable
-    ) -> some View {
-        self.sheet(isPresented: oAuthObservable.authorizationSheetIsPresented) {
+    func oauthSheet(oAuthObservable: OAuthObservable) -> some View {
+        self.modifier(OAuthSheetModifier(oAuthObservable: oAuthObservable))
+    }
+}
+
+struct OAuthSheetModifier: ViewModifier {
+    @ObservedObject var oAuthObservable: OAuthObservable
+
+    func body(content: Content) -> some View {
+        content.sheet(isPresented: $oAuthObservable.authorizationSheetIsPresented) {
             NavigationView {
-                WKView(url: authorizationUrl)
+                WKView(url: $oAuthObservable.authorizationURL)
                     .environmentObject(oAuthObservable)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
