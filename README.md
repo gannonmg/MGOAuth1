@@ -1,3 +1,3 @@
 # MGOAuth1
 
-A description of this package.
+A lightweight OAuth1 package for SwiftUI
