@@ -60,11 +60,11 @@ public struct WKView: UIViewRepresentable {
 
 public extension View {
     func oauthSheet(
-        isPresented: Binding<Bool>,
+//        isPresented: Binding<Bool>,
         authorizationUrl: Binding<URL?>,
         oAuthObservable: OAuthObservable
     ) -> some View {
-        self.sheet(isPresented: isPresented) {
+        self.sheet(isPresented: oAuthObservable.authorizationSheetIsPresented) {
             NavigationView {
                 WKView(url: authorizationUrl)
                     .environmentObject(oAuthObservable)
